@@ -201,10 +201,6 @@ def get_gpt_questions(selected_topics, num_questions, rag_mode):
         prompt = f"""
 You are a linear algebra instructor. Use *only* the facts in the following context to write True/False prompts.
 
-Context:
-{context_text}
-
-
 Generate {num_questions} challenging true/false linear algebra questions on: {', '.join(selected_topics)}.
 
 Guidelines:
@@ -221,6 +217,12 @@ Answer: True/False
 Explanation: …
 Matrix: [a,b,c][d,e,f][g,h,i] or 0
 <<END>>
+
+Context:
+{context_text}
+
+
+
 """
     else:
         prompt = f"""
