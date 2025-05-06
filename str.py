@@ -208,8 +208,12 @@ Context:
 Generate {num_questions} challenging true/false linear algebra questions on: {', '.join(selected_topics)}.
 
 Guidelines:
-- At least one-third must include a specific 3×3 numeric matrix; others use 'Matrix: 0'.
-- Use a Detailed chain of thought explanation stating why each is true or false.
+-- Format each clearly as a True/False statement ('Is the following statement true:').
+- At least 50% must combine two or more distinct concepts (e.g. span + invertibility).
+- Provide a detailed Chain of thought reasoning explanation clearly stating why the statement is true or false.
+- Do NOT refer explicitly to theorem numbers.
+- When you explain, you may restate relevant definitions or theorems for clarity, but do not literally say ‘as given in the context.’
+- The question needs to be about a numerical matrix in at least a third of the questions, formatted as [a,b,c][d,e,f][g,h,i]; otherwise, put Matrix: 0.
 
 Format blocks ending with <<END>>:
 Question X: …
@@ -227,8 +231,6 @@ Guidelines:
 - Format each clearly as a True/False statement ('Is the following statement true:').
 - At least 50% must combine two or more distinct concepts (e.g. span + invertibility).
 - Provide a detailed Chain of thought reasoning explanation clearly stating why the statement is true or false.
-- Do NOT refer explicitly to theorem numbers.
-- When you explain, you may restate relevant definitions or theorems for clarity, but do not literally say ‘as given in the context.’
 - The question needs to be about a numerical matrix in at least a third of the questions, formatted as [a,b,c][d,e,f][g,h,i]; otherwise, put Matrix: 0.
 
 Format each block ending with `<<END>>`:
