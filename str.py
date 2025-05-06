@@ -204,8 +204,6 @@ You are a linear algebra instructor. Use *only* the facts in the following conte
 Context:
 {context_text}
 
-Definitions:
-{defs}
 
 Generate {num_questions} challenging true/false linear algebra questions on: {', '.join(selected_topics)}.
 
@@ -230,6 +228,7 @@ Guidelines:
 - At least 50% must combine two or more distinct concepts (e.g. span + invertibility).
 - Provide a detailed Chain of thought reasoning explanation clearly stating why the statement is true or false.
 - Do NOT refer explicitly to theorem numbers.
+- When you explain, you may restate relevant definitions or theorems for clarity, but do not literally say ‘as given in the context.’
 - The question needs to be about a numerical matrix in at least a third of the questions, formatted as [a,b,c][d,e,f][g,h,i]; otherwise, put Matrix: 0.
 
 Format each block ending with `<<END>>`:
