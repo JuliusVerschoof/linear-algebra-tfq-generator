@@ -270,7 +270,7 @@ Matrix: [a,b,c][d,e,f][g,h,i] or 0
         m_match = re.search(r'Matrix:\s*(.*)$', blk, re.DOTALL)
         if not (q_match and a_match and e_match and m_match):
             continue
-        q_text = q_match.group(1).strip().strip('"')
+        q_text = q_match.group(1).strip()
         ans_text = a_match.group(1).strip()
         exp_text = e_match.group(1).strip()
         mat_text = m_match.group(1).strip()
@@ -348,7 +348,6 @@ if st.session_state.questions:
         st.markdown(f"---\n**Question {idx}:** {q['question']}")
         # Display matrix immediately
         if q['matrix'] != "0" and "[" in q['question']:
-            st.markdown("**Matrix:**")
             st.text(reformat_matrix(q['matrix']))
 
         # User answer selection with no default
