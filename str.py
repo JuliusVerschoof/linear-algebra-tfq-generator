@@ -201,6 +201,11 @@ def get_gpt_questions(selected_topics, num_questions, rag_mode):
         prompt = f"""
 You are a linear algebra instructor. Use *only* the facts in the following context to write True/False prompts.
 
+**MATRIX RULE (at least 1/3):**  
+At least one-third of your questions **must** include a 3×3 numeric matrix, **formatted** exactly as `[a,b,c][d,e,f][g,h,i]`.  
+Any question without a matrix should end with `Matrix: 0`.
+
+
 Generate {num_questions} challenging true/false linear algebra questions on: {', '.join(selected_topics)}.
 
 Guidelines:
@@ -209,7 +214,6 @@ Guidelines:
 - Provide a detailed Chain of thought reasoning explanation clearly stating why the statement is true or false.
 - Do NOT refer explicitly to theorem numbers.
 - When you explain, you may restate relevant definitions or theorems for clarity, but do not literally say ‘as given in the context.’
-- The question needs to be about a numerical matrix in at least a third of the questions, formatted as [a,b,c][d,e,f][g,h,i]; otherwise, put Matrix: 0.
 
 Format blocks ending with <<END>>:
 Question X: …
