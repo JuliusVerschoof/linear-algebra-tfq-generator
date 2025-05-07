@@ -22,7 +22,7 @@ TOPICS = [
     "Matrix Operations",
     "Matrix Inverse",
     "Determinants",
-    "Vector Spaces and subspaces",
+    "Vector Spaces",
 ]
 
 PROMPT_SECTIONS = {
