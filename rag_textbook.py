@@ -25,8 +25,18 @@ full_text = "\n\n".join(pages)
 
 # Split into section blocks by lines that begin with a section number N.M
 raw_sections = re.split(r'(?m)^(?=\d+\.\d)', full_text)
-# We want sections 1.1–1.5, 1.7–1.9, and 2.1
-desired = {f'1.{i}' for i in range(1,6)} | {f'1.{i}' for i in range(7,10)} | {'2.1'}
+# We want sections 1.1–1.5, 1.7–1.9, and 2.1 and 2.2,2.3 4.1,3.2,4.1-4.4
+desired = {
+    
+    *{f'1.{i}' for i in range(1, 6)},
+    *{f'1.{i}' for i in range(7, 10)},
+    
+    *{f'2.{i}' for i in (1, 2, 3)},
+ 
+    *{f'3.{i}' for i in (1, 2)},
+ 
+    *{f'4.{i}' for i in range(1, 5)},
+}
 sections = []  # list of (section_id, text)
 for sec in raw_sections:
     lines = sec.strip().splitlines()
