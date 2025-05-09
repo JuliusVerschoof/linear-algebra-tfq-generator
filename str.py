@@ -306,8 +306,8 @@ def get_gpt_questions(selected_topics, num_questions, rag_mode):
         prompt = f"""
 You are a linear algebra instructor. Use *only* the facts in the following context to write True/False prompts.
 
-**MATRIX RULE (at least 1/3):**  
-At least one-third of your questions **must** include a 3×3 numeric matrix, **formatted** exactly as `[a,b,c][d,e,f][g,h,i]`.  
+**MATRIX RULE (at least 1):**  
+At least one  of your questions **must** include a 3×3 numeric matrix, **formatted** exactly as `[a,b,c][d,e,f][g,h,i]`.(with the letters reprsenting numbers related to the specifc question generated). 
 Any question without a matrix should end with `Matrix: 0`.
 
 
