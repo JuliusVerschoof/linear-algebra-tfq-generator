@@ -316,9 +316,9 @@ Generate {num_questions} challenging true/false linear algebra questions on: {',
 Guidelines:
 -- Format each clearly as a True/False statement ('Is the following statement true:').
 - At least 50% must combine two or more distinct concepts (e.g. span + invertibility).
-- Provide a detailed Chain of thought reasoning explanation clearly stating why the statement is true or false.
+- **VERY IMPORTANT** Provide a detailed Chain of thought reasoning explanation clearly stating why the statement is true or false.
 - Do NOT refer explicitly to theorem numbers.
-- When you explain, you may restate relevant definitions or theorems for clarity, but do not literally say ‘as given in the context.’
+- When you explain, you may restate relevant definitions or theorems for clarity, but do not literally say ‘as given in the context.’ or any mention that you are using the context.
 
 Format blocks ending with <<END>>:
 Question X: …
@@ -410,9 +410,9 @@ if 'questions' not in st.session_state:
     st.session_state.questions = []
 
 st.title("🎲 Linear Algebra True/False Question Generator: ")
-st.subheader("Hello there! 👋 For my bachelor thesis I have created tool that generates TFQ for linear algbra and would love some feed back. For the most part it is pretty self-explnatory, but will quickly clarify RAG whcih stands for Retrieval-augmented generation, which is essentially giving GPT a knowledge base to pull from. I have created three options and would like you to test to see if you can see the difference between the types. The questions and their explanations can contain mistakes so be aware fo that. After you have id like you to complete the survey so i can gather feedback: https://forms.office.com/Pages/ResponsePage.aspx?id=AUGsYwXdcUe81i4qVCHl-kq0V1OUkKtPiig_TzVDGqpUMlVBVkNDVDE4SzBEVEpLQlRSQ0M1T1BJRS4u")
-st.subheader("One last thing I am hosting this service with my API key which costs money(a little but it builds up) so please dont spam the service.Please dont generate questions for the sake of it, but rather to test the service. Thank you! ")
-st.subheader("If you have any questions you can reach out to me at: j.verschoof@student.maastrichtuniversity.nl")
+st.caption("Hello there! 👋 For my bachelor thesis I have created tool that generates TFQ for linear algbra and would love some feed back. For the most part it is pretty self-explnatory, but will quickly clarify RAG whcih stands for Retrieval-augmented generation, which is essentially giving GPT a knowledge base to pull from. I have created three options and would like you to test to see if you can see the difference between the types. The questions and their explanations can contain mistakes so be aware fo that. After you have id like you to complete the survey so i can gather feedback: https://forms.office.com/Pages/ResponsePage.aspx?id=AUGsYwXdcUe81i4qVCHl-kq0V1OUkKtPiig_TzVDGqpUMlVBVkNDVDE4SzBEVEpLQlRSQ0M1T1BJRS4u")
+st.caption("One last thing I am hosting this service with my API key which costs money(a little but it builds up) so please dont spam the service.Please dont generate questions for the sake of it, but rather to test the service. Thank you! ")
+st.caption("If you have any questions you can reach out to me at: j.verschoof@student.maastrichtuniversity.nl")
 # Configuration form in main area
 with st.form(key='config_form'):
     st.subheader("Select Quiz Settings")
